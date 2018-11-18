@@ -64,6 +64,8 @@ CREATE TABLE Sala(
 	primary key (sala)
 );
 INSERT INTO Categoria VALUES (1,'Categoria Bot');
+INSERT INTO Categoria VALUES (2,'Category Bot');
+INSERT INTO Categoria VALUES (3,'Cat Bot');
 INSERT INTO Humor VALUES (1,'Humor Bot');
 INSERT INTO Sala VALUES (1,'Sala Bot');
 SELECT*FROM Categoria;

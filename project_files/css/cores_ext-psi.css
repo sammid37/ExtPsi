@@ -1,0 +1,27 @@
+/*Cores*/
+/*----------backgound-colors----------*/
+.clean-neutral{background-color: #FAF7FA !important}
+.peach-neutral{background-color: #F5D5B9 !important;}
+.blush-orange{background-color: #FFA174 !important;}
+.deep-violet{background-color: #36344C !important;}
+.dark-violet{background-color: #00000B !important;}
+
+/*----------text-colors----------*/
+.clean-neutral-text{color: #FAF7FA !important}
+.peach-pink-text{color: #FAA771 !important;}
+.blush-orange-text{color: #FFA174 !important;}
+.dark-violet-text{color: #00000B !important;}
+.deep-violet-tex{color: #36344C !important;}
+.dawn-blue-text{color: #9AC3B5 !important;}
+
+/*--------text-shadow-colors-------*/
+.blush-orange-shadow{text-shadow: 2px 2px #E57A68 !important;}
+
+/*----------cool colors----------*/
+.peach-pink{background-color:#FF8975 !important;}
+.dawn-blue{background-color: #9AC3B5 !important;/*A2C1B7*/}
+.deep-blue{background-color: #516764 !important;}
+.deadsea-blue{background-color: #2C333D !important;}
+.pastel-purple{background-color: #D0A9B0 !important;}
+.lavender-purple{background-color: #907C8F !important;}
+.darkdeep-violet{background-color: #4D4148 !important;}
