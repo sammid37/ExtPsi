@@ -11,13 +11,14 @@ $comentario = $_POST['comentario'];
 $psicologo = $_SESSION['matri'];
 
 $insert = "INSERT INTO Agendamento(psicologo,aluno,sala,dia,hora,comentario) VALUES ($psicologo,$aluno,$sala,'$dia','$hora','$comentario')";
-// echo $insert;
+echo $insert;
 $result = mysqli_query($con,$insert);
 
 if($result){
-  echo "<h5 style='font-size:14pt' class='light-green-text'>Consulta marcada com êxito</h5>";
+  echo "<h5>Consulta marcada com êxito</h5>";
+  header("location:tela_psi.php");
 } else{
-  echo "<h5 style='display:none'>Falha ao cadastrar encontro</h5>";;
+  echo "<h5>Falha ao cadastrar encontro</h5>";;
 }
 // fecha conexão com o banco
 mysqli_close($con);

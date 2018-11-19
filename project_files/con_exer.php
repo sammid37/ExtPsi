@@ -9,14 +9,14 @@
   $categoria = $_POST['categoria'];
   $conteudo = $_POST['contexer'];
 
-  $insert = "INSERT INTO Exercicios(titulo,imgexer,autor,origem,categoria,conteudo) VALUES ('$titulo','$imgexer','$autor','$origem','$categoria','$conteudo')";
+  $insert = "INSERT INTO Exercicios(titulo,imgexer,autor,origem,categoria,conteudo) VALUES ('$titulo','$imgexer','$autor','$origem',$categoria,'$conteudo')";
   // echo $insert;
   $result = mysqli_query($con,$insert);
 
   if($result){
-    echo "<h5 style='font-size:14pt' class='light-green-text'>Exercício cadastrado com sucesso</h5>";
+    header("location:index.php");
   }else{
-    echo "<h5 style='display:none'>Falha ao cadastrar exercício</h5>";
+    echo "<h5>Falha ao cadastrar exercício</h5>";
   }
 
   // fechando o banco

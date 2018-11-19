@@ -23,7 +23,7 @@
       "<div class='card'>
         <div class='card-content'>
           <h4>" . $row['titulo'] . " </h4>
-          <h6>por <a href='#' class='peach-pink-text'>".$row['nome']."</a>,
+          <h6>por <a href='#' class='peach-pink-text'>".$row['nome']." ".$row['sobrenome']."</a>,
           humor <a href='#' class='peach-pink-text'>".$row['humor']."</a></h6>
           <div class='divider'></div>
         </br>
@@ -32,21 +32,12 @@
       </div>";
     }
     ?>
-    <!-- <div class="card">
-      <div class="card-content">
-        <h4>Exemplo Estático</h4>
-        <h6>por <a class="peach-pink-text">Nome do Autor</a>, humor <a class="peach-pink-text">humor</a></h6>
-        <div class="divider"></div></br>
-        <p>Relato de teste, por garantia, ignore-me por enquanto!Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent pellentesque magna quis lectus dictum congue. Nam enim tortor, pharetra vitae mi ut, lobortis mattis orci. Morbi aliquam blandit dapibus. Suspendisse dictum, ligula in gravida ultricies, magna augue fermentum libero, nec malesuada eros nulla id diam.
-        </p>
-      </div>
-    </div> -->
     </div>
     <!-- Exercícios -->
     <div class="col s12 m4 l4">
       <div class="card">
-        <div class="card-content">
-          <p>A opção de favoritas exercício ainda não está disponível.</p>
+        <div class="card-content yellow lighten-3">
+          <p>A opção de favoritar exercício ainda não está disponível.</p>
         </div>
       </div>
       <?php

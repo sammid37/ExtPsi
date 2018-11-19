@@ -1,22 +1,24 @@
 <!-- DROPDOWN -->
 <ul id="contaPsi" class="dropdown-content">
-  <li><a href="perfil_psi.php" class="dark-violet-text"><i class="material-icons">account_circle</i>PERFIL</a></li>
-  <li><a href="tela_psi.php" class="dark-violet-text"><i class="material-icons">border_color</i>GERENCIAMENTO</a></li>
-  <li><a href="#!" class="dark-violet-text"><i class="material-icons">settings</i>CONFIGURAÇÕES</a></li>
+  <li><a href="perfil_psi.php" class="dark-violet-text"><i class="material-icons">account_circle</i>EM BREVE</a></li>
+  <li><a href="tela_psi.php" class="dark-violet-text"><i class="material-icons">border_color</i>Atividade</a></li>
+  <li><a href="#!" class="dark-violet-text"><i class="material-icons">settings</i>EM BREVE</a></li>
   <li class="divider"></li>
-  <li><a href="logout.php" class="dark-violet-text"><i class="material-icons">keyboard_tab</i> SAIR</a></li>
+  <li><a href="logout.php" class="dark-violet-text"><i class="material-icons">keyboard_tab</i> Sair</a></li>
 </ul>
 <ul id="contaAlu" class="dropdown-content">
-  <li><a href="perfil_alu.php" class="dark-violet-text"><i class="material-icons">account_circle</i>PERFIL</a></li>
-  <li><a href="tela_aluno.php" class="dark-violet-text"><i class="material-icons">border_color</i>GERENCIAMENTO</a></li>
-  <li><a href="#!" class="dark-violet-text"><i class="material-icons">settings</i>CONFIGURAÇÕES</a></li>
+  <li><a href="perfil_alu.php" class="dark-violet-text"><i class="material-icons">account_circle</i>EM BREVE</a></li>
+  <li><a href="tela_aluno.php" class="dark-violet-text"><i class="material-icons">border_color</i>Atividade</a></li>
+  <li><a href="#!" class="dark-violet-text"><i class="material-icons">settings</i>EM BREVE</a></li>
   <li class="divider"></li>
-  <li><a href="logout.php" class="dark-violet-text"><i class="material-icons">keyboard_tab</i> SAIR</a></li>
+  <li><a href="logout.php" class="dark-violet-text"><i class="material-icons">keyboard_tab</i> Sair</a></li>
 </ul>
 <ul id="admin" class="dropdown-content">
-  <li><a href="admin.php" class="dark-violet-text"><i class="material-icons">developer_board</i>Cadastrar</a></li>
+  <li><a href="admin.php" class="dark-violet-text" title="cadastre usários e atribuições"><i class="material-icons">developer_board</i>Cadastrar</a></li>
   <li class="divider"></li>
-  <li><a href="logout.php" class="dark-violet-text"><i class="material-icons">keyboard_tab</i> SAIR</a></li>
+  <li><a href="admin2.php" class="dark-violet-text" title="cadastre marcadores para relatos, exercícios e agendamentos"><i class="material-icons">format_list_bulleted</i> Marcadores</a></li>
+  <li class="divider"></li>
+  <li><a href="logout.php" class="dark-violet-text"><i class="material-icons">keyboard_tab</i> Sair</a></li>
 </ul>
 <!-- MENU -->
 <nav>

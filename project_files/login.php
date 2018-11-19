@@ -36,7 +36,7 @@
             Entrar<i class="material-icons right">send</i>
           </button>
         </div>
-        <a class="peach-pink-text" href="cadastrar_solicitarconta.php">Não tem conta? Solicite agora!</a>
+        <a class="peach-pink-text" href="#">Em breve a opção de solicitar uma conta!</a>
       </form>
     </div>
   </div>

@@ -11,6 +11,7 @@
     </ul>
   </div>
   <div class="modal-footer">
+     <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cadastrar</a>
     <a href="#!" class="modal-action modal-close waves-effect waves-light btn-flat">Fechar <i class="material-icons right">close</i></a>
   </div>
 </div>
@@ -23,7 +24,7 @@
         include "conexao.php";
         $con = mysqli_connect($host,$user,$psw,$schema) or die("Conexão ruim");
         
-        $select = "SELECT * FROM Aluno";
+        $select = "SELECT DISTINCT * FROM Aluno";
         $result=mysqli_query($con,$select);
         if($result){
           while($row=mysqli_fetch_assoc($result)){
@@ -45,7 +46,7 @@
     <?php
       include "conexao.php";
       $con = mysqli_connect($host,$user,$psw,$schema) or die("Conexão ruim");
-      $select = "SELECT * FROM Psicologo";
+      $select = "SELECT DISTINCT * FROM Psicologo";
       $result=mysqli_query($con,$select);
       if($result){
         while($row=mysqli_fetch_assoc($result)){
@@ -66,7 +67,7 @@
     <?php
       include "conexao.php";
       $con = mysqli_connect($host,$user,$psw,$schema) or die("Conexão ruim");
-      $select = "SELECT * FROM Relatos R,Aluno A,Humor H WHERE R.codhumor = H.numhumor";
+      $select = "SELECT DISTINCT * FROM Relatos R,Aluno A,Humor H WHERE R.codhumor = H.numhumor AND R.codAutor = A.matriAlu";
       $result=mysqli_query($con,$select);
       if($result){
         while($row=mysqli_fetch_assoc($result)){
@@ -88,7 +89,7 @@
     <?php
       include "conexao.php";
       $con = mysqli_connect($host,$user,$psw,$schema) or die("Conexão ruim");
-      $select = "SELECT * FROM Exercicios E, Categoria C WHERE E.categoria = C.categoria";
+      $select = "SELECT DISTINCT* FROM Exercicios E, Categoria C WHERE E.categoria = C.categoria";
       $result=mysqli_query($con,$select);
       if($result){
         while($row=mysqli_fetch_assoc($result)){

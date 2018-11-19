@@ -4,7 +4,7 @@
 ?>
 <div class="input-field">
   <div class="row">
-    <form class="col s12 m12 l12" action="" method="post">
+    <form class="col s12 m12 l12" action="con_agenda.php" method="post">
       <div class="row">
         <div class="input-field col s12 m3 l3">
           <select name="aluno" id="aluno" required="required">
@@ -13,11 +13,12 @@
             // variaveis para conexão
             include "conexao.php";
             $con = mysqli_connect($host,$user,$psw,$schema) or die("Conexão ruim");
-            $select = "SELECT * FROM Aluno,Atribuicao";
+            $select = "SELECT DISTINCT Al.nome, Al.sobrenome, Al.matriAlu FROM Aluno Al,Atribuicao Atri, Psicologo P 
+            WHERE Al.matriAlu = Atri.matriAlu AND Atri.matriPsi =".$_SESSION['matri'].";";
             $result = mysqli_query($con,$select);
 
             while($row = mysqli_fetch_array($result)){
-              echo"<option  name='nomeal' value='".$row['matriAlu']."'>" .$row['nome']."</option>";
+              echo"<option  name='nomeal' value='".$row['matriAlu']."'>" .$row['nome']." ".$row['sobrenome']."</option>";
             }
             ?>
 

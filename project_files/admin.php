@@ -15,21 +15,15 @@
           <?php
           include "conexao.php";
           $con = mysqli_connect($host,$user,$psw,$schema) or die("Conexão ruim");
-          $user="SELECT COUNT(U.matricula) AS Usuarios FROM Usuarios U";
-          $relato="SELECT COUNT(R.cod) AS TotalRel FROM Relatos R";
-          $exer="SELECT COUNT(E.cod) AS TotalExer FROM Exercicios E";
-          $cadastrados="SELECT COUNT(A.matriAlu) AS tAlu,COUNT(P.matriPsi) AS tPsi FROM Aluno A, Psicologo P";
+          $user="SELECT COUNT(U.matricula) AS Usuarios FROM Usuarios U;";
+          $relato="SELECT COUNT(R.cod) AS TotalRel FROM Relatos R;";
+          $exer="SELECT COUNT(E.cod) AS TotalExer FROM Exercicios E;";
+          $cadastrados="SELECT DISTINCT COUNT(A.matriAlu) AS aluno, COUNT(P.matriPsi) AS psicologo FROM Aluno A, Psicologo P;";
+          
           $resultU=mysqli_query($con,$user);
           $resultR=mysqli_query($con,$relato);
           $resultE=mysqli_query($con,$exer);
           $resultC=mysqli_query($con,$cadastrados);
-          
-          $humores="SELECT COUNT(H.numhumor) AS TotalHumor FROM Humor H";
-          $categorias="SELECT COUNT(CT.categoria) AS TotalCategorias FROM Categoria CT";
-          $salas="SELECT COUNT(S.sala) AS TotalSalas FROM Sala S";
-          $resultHumor=mysqli_query($con,$humores);
-          $resultCategoria=mysqli_query($con,$categorias);
-          $resultSala=mysqli_query($con,$salas);
 
           if($resultC){
             while($row=mysqli_fetch_assoc($resultC)){
@@ -42,14 +36,14 @@
                   <div class='card-content white-text'><center><i class='large material-icons'>person</i></center></div>
                   <div class='card-content white-text'>
                     <center>
-                      <a href='#alucad' class='waves-effect waves-teal btn-flat white-text center-align modal-trigger'>".$row['tAlu']." alunos cadastrados</a>
-                      <a href='#psicad' class='waves-effect waves-teal btn-flat white-text center-align modal-trigger'>".$row['tPsi']." psicólgos cadastrados</a>
+                      <a href='#alucad' class='waves-effect waves-teal btn-flat white-text center-align modal-trigger'>".$row['aluno']." alunos cadastrados</a>
+                      <a href='#psicad' class='waves-effect waves-teal btn-flat white-text center-align modal-trigger'>".$row['psicologo']." psicólgos cadastrados</a>
                     </center>
                     <!--<center><i class='large material-icons'>person</i></center>-->
                   </div>
                   <div class='card-action'>
                     <center>
-                      <a href='#contasolicitadas' class='collection-item white-text modal-trigger'>Solicitações de nova conta<span class='new badge'>4</span></a>
+                      <a href='#contasolicitadas' class='collection-item white-text modal-trigger'>Solicitações de nova conta em breve<span class='new badge'>?</span></a>
                     </center>
                   </div>
                 </div>
@@ -83,55 +77,16 @@
           ?>
 
         </div>
-        <div class="row">
-          
-          
-          <ul class="">
-          <?php 
-          include "conexao.php";
-          $con = mysqli_connect($host,$user,$psw,$schema) or die("Conexão ruim");
-          $humores="SELECT COUNT(H.numhumor) AS TotalHumor FROM Humor H";
-          $categorias="SELECT COUNT(CT.categoria) AS TotalCategorias FROM Categoria CT";
-          $salas="SELECT COUNT(S.sala) AS TotalSalas FROM Sala S";
-          
-          $resultHumor=mysqli_query($con,$humores);
-          $resultCategoria=mysqli_query($con,$categorias);
-          $resultSala=mysqli_query($con,$salas); 
-          
-          if($resultHumor){
-            while($row=mysqli_fetch_assoc($resultHumor)){
-              echo "<li>Humor</li>";
-            }
-          }
-          if($resultCategoria){
-            while($row=mysqli_fetch_assoc($resultCategoria)){
-              echo "<li>Categoria</li>";
-            }
-          }
-          if($resultSala){
-            while($row=mysqli_fetch_assoc($resultSala)){
-              echo "<li>Sala</li>";
-            }
-          }
-          ?>
-        </ul>
-        </div>
       </div>
     <!-- </div> -->
     <?php
-      include_once 'modals.php';
+      include_once "modals.php";
     ?>
     <div class="divider"></div><br>
-    <ul id="users" class="dropdown-content">
-      <li><a href="#!">cadastrar novo usuário</a></li>
-      <li><a href="#!">solicitações de cadastro</a></li>
-    </ul>
-    <a href="cadastrar_users.php" class="waves-effect waves-light btn dawn-blue dropdown-button" data-activates="users">Cadastrar Usuários<i class="material-icons right">arrow_drop_down</i></a>
-    <a href="cadastrar_exer.php" class="waves-effect waves-light btn dawn-blue">Cadastrar Exercícios</a>
-    <a href="cadastrar_atri.php" class="waves-effect waves-light btn dawn-blue">Atribuir Psicólogo à Aluno</a>
-    <a href="cadastrar_outros.php" class="waves-effect waves-light btn dawn-blue">Cadastrar Humor, Categoria ou Sala</a>
-  </div>
-
+      <a href="cadastrar_users.php" class="waves-effect waves-light btn dawn-blue">Cadastrar Usuários</a>
+      <a href="cadastrar_exer.php" class="waves-effect waves-light btn dawn-blue">Cadastrar Exercícios</a>
+      <a href="cadastrar_atri.php" class="waves-effect waves-light btn dawn-blue">Atribuir Psicólogo à Aluno</a>
+    </div>
 <?php
   include_once "0footer.php";
 ?>

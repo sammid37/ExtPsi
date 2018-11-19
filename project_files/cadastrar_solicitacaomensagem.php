@@ -1,6 +1,9 @@
+<?php 
+// require_once '';
+?>
 <div class="input-field">
   <div class="row">
-    <form class="col s12 m12 l12" action="" method="post">
+    <form class="col s12 m12 l12" action="con_solicitarmensagem.php" method="post">
       <div class="row">
         <div class="input-field col s12 m12 l12">
           <textarea id="solicitar" name="solicitar" class="materialize-textarea" data-length="300" required="required"></textarea>
