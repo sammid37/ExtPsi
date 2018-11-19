@@ -148,7 +148,12 @@
         <?php
           include "conexao.php";
           $con = mysqli_connect($host,$user,$psw,$schema) or die("Conexão ruim");
-          $select = "SELECT * FROM SolicitarEncontro S, Aluno A WHERE S.matriAlu=A.matriAlu";
+          $select = "SELECT * 
+          FROM SolicitarEncontro S, Aluno A 
+          WHERE S.matriAlu=A.matriAlu
+          AND S.matriPsi ="
+          .$_SESSION['matri'].
+          "";
           $result = mysqli_query($con,$select);
 
           while($row = mysqli_fetch_array($result)){

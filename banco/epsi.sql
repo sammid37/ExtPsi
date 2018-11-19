@@ -4,8 +4,6 @@ USE Bancoep;
 -- DROP SCHEMA Bancoep;
 -- TABELAS DE USUÁRIOS
 
-SELECT COUNT(P.matriPsi) AS tPsi FROM Psicologo P;
-
 CREATE TABLE Usuarios(
 	nome varchar(20) NOT NULL,
 	sobrenome varchar(20) NOT NULL,
@@ -80,7 +78,6 @@ CREATE TABLE Atribuicao(
 	foreign key(matriAlu) references Aluno(matriAlu)
 );
 SELECT*FROM Atribuicao;
-SELECT DISTINCT A.nome, Atri.matriAlu FROM Atribuicao Atri, Aluno A, Psicologo P  WHERE Atri.matriAlu = 2015110909 AND Atri.matriAlu = A.matriAlu;
 
 CREATE TABLE Exercicios(
 	cod int auto_increment primary key,
@@ -117,7 +114,6 @@ CREATE TABLE SolicitarEncontro(
 -- INSERT INTO SolicitarEncontro(matriAlu, solicitar) VALUES (2015110909,'Me help me psii, pls');
 SELECT*FROM Relatos;
 SELECT*FROM SolicitarEncontro;
-SELECT DISTINCT SE.solicitar as Mensagem FROM SolicitarEncontro SE, Aluno A WHERE SE.matriAlu = 2015110909;
 
 -- Funcionalidades referente a Psicologos
 CREATE TABLE Agendamento(
@@ -133,7 +129,6 @@ CREATE TABLE Agendamento(
 	foreign key(sala) references Sala(sala)
 );
 SELECT*FROM Agendamento;
-SELECT Al.matriAlu FROM Agendamento Ag, Aluno Al WHERE Ag.aluno = Al.nome;
 
 -- Funcionalidade comum a Alunos e Psicólogos
 -- Necessita ser incrementado, ainda
@@ -145,11 +140,3 @@ CREATE TABLE Favoritos(
   foreign key(matricula) references Usuarios(matricula)
 );
 SELECT*FROM Favoritos;
-SELECT * FROM Aluno;
-SELECT distinct P.nome, P.sobrenome, P.matriPsi 
-FROM Psicologo P, Atribuicao Atri, Aluno A 
-WHERE P.matriPsi = Atri.matriPsi AND A.matriAlu = 201622 AND Atri.matriAlu = 201622;
-
-SELECT Atri.matriPsi 
-FROM Psicologo P, Atribuicao Atri, Aluno A 
-WHERE Atri.matriPsi = P.matriPsi AND A.matriAlu = 201622 AND Atri.matriAlu = 201622;"
